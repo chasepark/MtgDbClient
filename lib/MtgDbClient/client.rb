@@ -68,7 +68,7 @@ module MtgDbClient
     end
 
     def filter_cards(property, value)
-    	self.class.get(URI.escape("/cards/#{property}=#{value}"))
+    	self.class.get(URI.escape("/cards/?#{property}=#{value}"))
     end
 
     def get_card_in_set(set_id, collector_number)
