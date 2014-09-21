@@ -24,9 +24,9 @@ Or install it yourself as:
 ## Usage
 To get started using MtgDbClient first setup the client
 	
-	require "mtgdbclient"
+	require "MtgDbClient"
 	
-	client = MtgDbClient.new
+	client = MtgDbClient::Client.new
 
 ###Configuration
 	
