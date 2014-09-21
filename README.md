@@ -1,5 +1,7 @@
 # MtgDbClient
 
+[![Gem Version](https://badge.fury.io/rb/MtgDbClient.svg)](http://badge.fury.io/rb/MtgDbClient)
+
 This is a simple api wrapper gem for the MtgDb Api found at 'http://api.mtgdb.info'. This is a 1:1 representation of the C# wrapper.
 
 ####Dependencies
