@@ -13,7 +13,7 @@ module MtgDbClient
        	send("#{key}=", merged_options[key])
       end
      
-      self.class.base_uri merged_options[:endpoint]
+      self.class.base_uri 'api.mtgdb.info'
     end
 
     #Common Functions

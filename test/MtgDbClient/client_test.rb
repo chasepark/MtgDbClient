@@ -1,6 +1,29 @@
 require 'helper'
 
 describe 'client' do
+	before do
+		@keys = MtgDbClient::Configuration::VALID_CONFIG_KEYS
+	end
+
+	describe 'with module configuration' do
+		before do
+			MtgDbClient.configure do |config|
+				@keys.each do |key|
+					config.send("#{key}=", key)
+				end
+			end
+		end
+		after do
+			MtgDbClient.reset
+		end
+	it 'should inherit module configuration' do
+		mtgdb_client = MtgDbClient::Client.new
+		@keys.each do |key|
+			mtgdb_client.send(key).must_equal key
+		end
+	end
+end
+
 	it 'should be initializable' do
 		mtgdb_client = MtgDbClient::Client.new
 		mtgdb_client.wont_be_nil

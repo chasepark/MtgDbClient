@@ -30,6 +30,7 @@ To get started using MtgDbClient first setup the client
 	
 	MtgDbClient.configure do|config|
 		config.endpoint = 'api.mtgdb.info'
+		#default is api.mtgdb.info
 	end	
 
 
