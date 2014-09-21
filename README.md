@@ -46,7 +46,7 @@ returns all available card types
 	
 	client.get_card_types
 
-####GetCardSubtypes
+####Get Card Subtypes
 returns all unique subtypes available on all cards
 
 	client.get_card_subtypes
