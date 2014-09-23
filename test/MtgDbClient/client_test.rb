@@ -36,28 +36,29 @@ end
 	describe '.sets' do
 		it 'should return a list of sets' do
 			mtgdb_client = MtgDbClient::Client.new
-			mtgdb_client.get_sets.wont_be_nil
+			sets = mtgdb_client.get_sets
+			sets.wont_be_empty
 		end
 	end
 
 	describe '.rarity_types' do
 		it 'should return a list of rarities' do
 			mtgdb_client = MtgDbClient::Client.new
-			mtgdb_client.get_rarity_types.wont_be_nil
+			mtgdb_client.get_rarity_types.wont_be_empty
 		end
 	end
 
 	describe '.card_types' do
 		it 'should return a list of card master types' do
 			mtgdb_client = MtgDbClient::Client.new
-			mtgdb_client.get_card_types.wont_be_nil
+			mtgdb_client.get_card_types.wont_be_empty
 		end
 	end
 
 	describe '.card_subtypes' do
 		it 'should return a list of card subtypes' do
 			mtgdb_client = MtgDbClient::Client.new
-			mtgdb_client.get_card_subtypes.wont_be_nil
+			mtgdb_client.get_card_subtypes.wont_be_empty
 		end
 	end
 
@@ -82,6 +83,7 @@ end
 		it 'should return the details of the specified sets' do
 			mtgdb_client = MtgDbClient::Client.new
 			sets = mtgdb_client.get_sets_by_id(["tmp", "sth", "exo" ])
+			sets.inspect
 			sets.wont_be_nil
 		end
 	end
@@ -129,7 +131,8 @@ end
 		it 'should return the specified card in the specified set' do
 			mtgdb_client = MtgDbClient::Client.new
 			card = mtgdb_client.get_card_in_set("tmp", 1)
-			card["name"].must_equal 'Abandon Hope'
+			puts card.image_low
+			card.name.must_equal 'Abandon Hope'
 		end
 	end
 
@@ -137,7 +140,7 @@ end
 		it 'should return the specified set' do
 			mtgdb_client = MtgDbClient::Client.new
 			set = mtgdb_client.get_set("tmp")
-			set["name"].must_equal "Tempest"
+			set.name.must_equal "Tempest"
 		end
 	end
 

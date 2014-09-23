@@ -1,6 +1,11 @@
 require "MtgDbClient/version"
 require "MtgDbClient/configuration"
 require "MtgDbClient/client"
+require "MtgDbClient/card_set"
+require "MtgDbClient/card"
+require "MtgDbClient/ruling"
+require "MtgDbClient/format"
+
 
 module MtgDbClient
 	extend Configuration
