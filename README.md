@@ -117,6 +117,56 @@ gets a list of cards that meet the specified criteria
 
 	client.search(text, start=0, limit=0, isComplex=false)
 	
+####Set Object
+	set.id
+	set.name
+	set.type
+	set.block
+	set.description
+	set.common_count
+	set.uncommon_count
+	set.rare_count
+	set.mythic_rare_count
+	set.basic_land_count
+	set.total_cards
+	set.release_date
+	set.card_ids
+
+####Card Object
+	card.id
+	card.related_card_id
+	card.set_number
+	card.name
+	card.search_name
+	card.description
+	card.flavor
+	card.colors
+	card.mana_cost
+	card.converted_mana_cost
+	card.card_set_name
+	card.type
+	card.sub_type
+	card.power
+	card.toughness
+	card.loyalty
+	card.rarity
+	card.artist
+	card.card_set_id
+	card.token
+	card.promo
+	card.rulings #returns [Rulings]
+	card.formats #returns [Format]
+	card.released_at
+	card.image_low #low-res image
+	card.image_high #high-res image
+
+####Ruling Object
+	ruling.released_at
+	ruling.rule
+
+####Format Object
+	format.name
+	format.legality
 	
 ## Contributing
 
