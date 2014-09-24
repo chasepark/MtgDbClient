@@ -68,6 +68,11 @@ returns a random card from a specified set
 
 	client.get_random_card_from_set(set_id)
 
+####Get Cards In Set
+returns all cards in specified set
+
+	client.get_cards_in_set(set_id)
+
 ####Get Sets By Id
 returns a details of the specified sets
 
