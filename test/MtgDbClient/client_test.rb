@@ -83,7 +83,6 @@ end
 		it 'should return the details of the specified sets' do
 			mtgdb_client = MtgDbClient::Client.new
 			sets = mtgdb_client.get_sets_by_id(["tmp", "sth", "exo" ])
-			sets.inspect
 			sets.wont_be_nil
 		end
 	end
@@ -100,6 +99,14 @@ end
 		it 'should return a random card from a random set' do
 			mtgdb_client = MtgDbClient::Client.new
 			mtgdb_client.get_random_card.wont_be_nil
+		end
+	end
+
+	describe '.get_cards_in_set(set_id)' do
+		it 'should return all cards in a specific set' do
+			mtgdb_client = MtgDbClient::Client.new
+			tmp_cards = mtgdb_client.get_cards_in_set("TMP")
+			tmp_cards.wont_be_empty
 		end
 	end
 
@@ -131,7 +138,6 @@ end
 		it 'should return the specified card in the specified set' do
 			mtgdb_client = MtgDbClient::Client.new
 			card = mtgdb_client.get_card_in_set("tmp", 1)
-			puts card.image_low
 			card.name.must_equal 'Abandon Hope'
 		end
 	end
