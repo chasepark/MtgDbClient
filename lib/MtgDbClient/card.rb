@@ -29,7 +29,7 @@ module MtgDbClient
 			self.promo = response["promo"]
 			self.rulings = response["rulings"].map{|r| Ruling.new(r)}
 			self.formats = response["formats"].map{|f| Format.new(f)}
-			self.released_at = Date.parse(response["releasedAt"])
+			self.released_at = Date.parse(response["releasedAt"]) unless response["releasedAt"].nil?
 		end
 
 		def image_low
