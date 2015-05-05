@@ -12,7 +12,7 @@ module MtgDbClient
 			Configuration::VALID_CONFIG_KEYS.each do |key|
        	send("#{key}=", merged_options[key])
       end
-     
+
       self.class.base_uri 'api.mtgdb.info'
     end
 
@@ -72,7 +72,7 @@ module MtgDbClient
     end
 
     def get_card_by_name(card_name)
-    	response = self.class.get(URI.escape("/cards/#{card_name}")).map{|c| Card.new(c)}
+    	response = self.class.get(URI.escape("/cards/#{card_name.tr('/', '').tr(':','')}")).map{|c| Card.new(c)}
     end
 
     def filter_cards(property, value)

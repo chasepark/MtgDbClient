@@ -118,6 +118,14 @@ end
 		end
 	end
 
+	describe '.get_card_by_name' do
+		it 'should return all copies of a card with the same name' do
+			mtgdb_client = MtgDbClient::Client.new
+			card = mtgdb_client.get_card_by_name('Dead/Gone')
+			card.wont_be_nil
+		end
+	end
+
 	#commented due to the time it takes to run the test.
 	#describe '.get_cards' do
 	#	it 'returns all cards' do
